@@ -33,8 +33,6 @@ cat JTR_default_password.txt
 
 *Output:* `File not found: My-Locked-PDF2.pdf`
 
-![Initial Execution Error - File Not Found](media/01-pdf2john-missing-file-error.png)
-
 ---
 
 ### Step 2: File Relocation and Successful Hash Extraction
@@ -51,7 +49,7 @@ The extracted `$pdf$` hash structure contained algorithm revision flags, encrypt
 My-Locked-PDF2.pdf:$pdf$4*4*128*-1028*1*16*0853f2cde0ef15b1c0f93ed229d3b1ad*32*8f13ce5aa39ad974364d36a057da76790021446990b9e4114071a4d9104984c1*32*ceecdac74b19b5a62688d3b3524e1374c955cbb9cc3c45316494d9446ef81af1
 ```
 
-![File Relocation and Hash Extraction](media/02-relocating-pdf-and-hash-extraction.png)
+![File Relocation and Hash Extraction](media/01-relocating-pdf-and-hash-extraction.png)
 
 ---
 
@@ -71,7 +69,7 @@ The recovered password was subsequently confirmed from the JTR cracked database:
 john --show --format=PDF JTR_default_password.txt
 ```
 
-![Cracking Password with John the Ripper and Verification](media/03-john-cracking-and-verification.png)
+![Cracking Password with John the Ripper and Verification](media/02-john-cracking-and-verification.png)
 
 ---
 
@@ -84,7 +82,7 @@ john --show --format=PDF JTR_default_password.txt
 4. At 97% completion (3,456 / 3,556 candidate passwords tested), a positive match was confirmed:
    - **Cracked Password:** `good-luck`
 
-![Dictionary Attack Match](media/04-online-dictionary-attack-success.png)
+![Dictionary Attack Match](media/03-online-dictionary-attack-success.png)
 
 ---
 
@@ -93,7 +91,7 @@ john --show --format=PDF JTR_default_password.txt
 2. Retrieved the completion flag from the decrypted document:
    - **Flag:** `nw{cybersecurity_flag_captured_2608}`
 
-![Captured CTF Flag](media/05-networkwalks-ctf-flag-capture.png)
+![Captured CTF Flag](media/04-networkwalks-ctf-flag-capture.png)
 
 ---
 
